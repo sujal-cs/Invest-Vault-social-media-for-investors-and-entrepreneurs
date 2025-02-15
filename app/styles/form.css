@@ -1,0 +1,87 @@
+:root {
+  --clr-dark: #070a13;
+  --clr-light: #f1f5f9;
+  --clr-slate400: #94a3b8;
+  --clr-slate600: #475569;
+  --clr-slate800: #1e293b;
+  --clr-rose: #e11d48;
+  --clr-indigo: #4f46e5;
+}
+
+/* Overall page styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--clr-dark);
+  font-family: sans-serif;
+  color: var(--clr-light);
+}
+
+/* Container styling for the form page */
+.form-container {
+  max-width: 400px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: var(--clr-slate800);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+/* Header styling */
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  color: var(--clr-indigo);
+}
+
+/* Error message styling */
+.error {
+  color: var(--clr-rose);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* Form styling */
+.details-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.details-form label {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.details-form input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--clr-slate600);
+  border-radius: 0.25rem;
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+}
+
+.details-form input::placeholder {
+  color: var(--clr-slate400);
+}
+
+/* Button styling */
+.btn {
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: var(--clr-rose);
+  color: var(--clr-light);
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-0.125rem);
+}

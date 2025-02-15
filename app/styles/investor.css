@@ -1,0 +1,62 @@
+:root {
+  --clr-dark: #070a13;
+  --clr-light: #f1f5f9;
+  --clr-slate400: #94a3b8;
+  --clr-slate600: #475569;
+  --clr-slate800: #1e293b;
+  --clr-rose: #e11d48;
+  --clr-indigo: #4f46e5;
+}
+
+/* Overall dark background */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--clr-dark);
+  font-family: sans-serif;
+  color: var(--clr-light);
+}
+
+/* Investor container styling */
+.investor-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+}
+
+.investor-container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--clr-indigo);
+}
+
+.investor-container h2 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--clr-slate600);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* List styling */
+.investor-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.startup-item {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* Styling for startups within budget */
+.within-budget {
+  background-color: var(--clr-slate800);
+}
+
+/* Styling for startups slightly over budget */
+.over-budget {
+  background-color: var(--clr-rose);
+  color: var(--clr-light);
+}

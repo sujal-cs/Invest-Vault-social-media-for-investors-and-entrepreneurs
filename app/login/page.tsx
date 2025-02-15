@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import "@styles/login.css"; // Ensure this path matches your project structure
+import "@styles/login.css";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -31,9 +31,14 @@ export default function LoginPage() {
       console.log("Login Response:", data);
 
       if (res.ok) {
-        // Store user details (if needed) and redirect
-        localStorage.setItem("user", JSON.stringify(data.user));
-        window.location.href = "/dashboard"; // Force full page reload
+        if (data.user) {
+          // Store user details in localStorage
+          localStorage.setItem("user", JSON.stringify(data.user));
+          // Force full redirect to Dashboard
+          router.push("/form")
+        } else {
+          setError("User data not received. Login failed.");
+        }
       } else {
         setError(data.error || "Invalid credentials");
       }
