@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Invest-Vault: Connecting Startups and Investors
 
-## Getting Started
+Invest-Vault is a web application designed to connect startups seeking funding with investors looking for promising ventures. This platform simplifies the process of finding investment opportunities and securing funding by providing a centralized space for startups to showcase their needs and for investors to discover potential investments within their budget.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **User Roles:** Distinct registration and login for Investors and Startups.
+- **Investor Profile:** Investors can specify their investment budget.
+- **Startup Profile:** Startups can list their funding requirements, offered equity, a link to their pitch video (embedded from YouTube), and contact details.
+- **Search and Filtering:** Investors can browse startups seeking funding, filtering by budget (with a tolerance for slightly exceeding the budget) and sorting by various criteria (e.g., funding amount, equity offered).
+- **Intuitive Interface:** A user-friendly interface for both investors and startups to easily navigate and manage their profiles.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js:** A React framework for building server-side rendered applications.
+- **TypeScript:** A typed superset of JavaScript for enhanced code maintainability.
+- **Tailwind CSS:** A utility-first CSS framework for rapid UI development.
+- **YouTube Embedding:** Seamless integration of YouTube videos for startup pitches.
+- **Mongo DB:** A widely used and very good solution for solving the data storing need of applications.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## Setup and Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository: `git clone [url]`
+2. Install dependencies: `npm install` or `yarn install`
+3. Start the development server: `npm run dev` or `yarn dev`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Future Enhancements
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **User Authentication:** Implement secure user authentication and authorization.
+- **Database Integration:** Integrate a database to store user and project data.
+- **Advanced Search and Filtering:** Implement more advanced search and filtering options.
+- **Messaging System:** Enable direct communication between investors and startups.
+- **Investment Tracking:** Add features for tracking investments and portfolio management.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contact
+
+- **Team: csnerds.dev**
+- **Email: sujallokhande70@gmail.com**
+
+
+
