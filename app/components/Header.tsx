@@ -11,12 +11,20 @@ export default function Header() {
         <div className={styles.header__menu}>
           <div className={styles.header__items}>Home</div>
           <div className={styles.header__items}>About</div>
-          <button className={`${styles.header__items} ${styles.btn}`}>
-            Login
-          </button>
-          <button className={`${styles.header__items} ${styles.btn}`}>
-            Signup
-          </button>
+
+          {/* Login Button with Link */}
+          <Link href="/login" passHref>
+            <button className={`${styles.header__items} ${styles.btn}`}>
+              Login
+            </button>
+          </Link>
+
+          {/* Signup Button with Link */}
+          <Link href="/signup" passHref>
+            <button className={`${styles.header__items} ${styles.btn}`}>
+              Signup
+            </button>
+          </Link>
         </div>
       </header>
     </>

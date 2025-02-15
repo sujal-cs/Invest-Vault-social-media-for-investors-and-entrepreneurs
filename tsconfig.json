@@ -4,6 +4,8 @@
     "paths": {
       "@components/*": ["app/components/*"],
       "@styles/*": ["app/styles/*"],
+      "@lib/*": ["lib/*"],
+      "@models/*": ["models/*"]
     },
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
