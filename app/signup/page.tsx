@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import "@styles/signup.css"; // ✅ Importing the CSS file
+import "@styles/signup.css";
+
+
 
 export default function Signup() {
   const router = useRouter();
@@ -60,7 +62,7 @@ export default function Signup() {
           <option value="startup">Startup</option>
         </select>
 
-        <button type="submit" className="btn" disabled={loading}>
+        <button type="submit" disabled={loading}>
           {loading ? "Signing up..." : "Sign Up"}
         </button>
       </form>

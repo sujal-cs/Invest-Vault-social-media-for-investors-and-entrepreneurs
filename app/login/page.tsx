@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import "@styles/login.css";
+import "@styles/login.css"; // Ensure this path matches your project structure
 
 export default function LoginPage() {
   const router = useRouter();
@@ -10,7 +10,6 @@ export default function LoginPage() {
     email: "",
     password: "",
   });
-
   const [error, setError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,18 +20,26 @@ export default function LoginPage() {
     e.preventDefault();
     setError("");
 
-    const res = await fetch("/api/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    const data = await res.json();
+      const data = await res.json();
+      console.log("Login Response:", data);
 
-    if (res.ok) {
-      router.push("/dashboard"); // Redirect after login
-    } else {
-      setError(data.error || "Something went wrong");
+      if (res.ok) {
+        // Store user details (if needed) and redirect
+        localStorage.setItem("user", JSON.stringify(data.user));
+        window.location.href = "/dashboard"; // Force full page reload
+      } else {
+        setError(data.error || "Invalid credentials");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      setError("Something went wrong. Please try again.");
     }
   };
 
@@ -40,26 +47,29 @@ export default function LoginPage() {
     <div className="login-container">
       <h2>Login</h2>
       {error && <p className="error">{error}</p>}
-
       <form onSubmit={handleSubmit} className="login-form">
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleChange}
-          required
-        />
-
+        <div>
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+        </div>
         <button type="submit">Login</button>
       </form>
     </div>
